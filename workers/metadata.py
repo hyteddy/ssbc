@@ -13,6 +13,9 @@ import metautils
 from bencode import bencode, bdecode
 geoip = pygeoip.GeoIP('GeoIP.dat')
 
+import ptvsd
+ptvsd.settrace(None, ('0.0.0.0', 3000))
+
 def decode(encoding, s):
     if type(s) is list:
         s = ';'.join(s)
